@@ -1,0 +1,169 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+/* Page background */
+body {
+    height: 100vh;
+    background: black;
+    color: rgb(0, 0, 0);
+    background: linear-gradient(
+        -45deg,
+        #c0ade8,
+        #94cdec,
+        #d28ff9,
+        #000000
+    );
+    background-size: 400% 400%;
+    animation: gradientBG 15s ease infinite;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}   
+
+/* Upload card */
+.upload-container {
+    background:#c0d8f2;
+    padding: 30px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 420px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.8);
+    position: relative;
+    z-index: 2;
+}
+
+/* Title */
+.upload-container h2 {
+    text-align: center;
+    margin-bottom: 25px;
+}
+
+/* Labels */
+label {
+    font-size: 14px;
+    margin-bottom: 6px;
+    display: block;
+    color: #000000;
+}
+
+/* Inputs */
+input[type="text"],
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    background: #222;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+/* Upload button */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #047b1e;
+    border: none;
+    border-radius: 10px;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background: #08e926;
+}
+
+/* Back link */
+.back-link {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    color: #000000;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.back-link:hover {
+    color: rgb(3, 63, 23);
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .upload-container {
+        margin: 20px;
+    }
+}
+
+@keyframes gradientBG {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+
+
+/* Horizontal positions + delays */
+.social-icons-bg i:nth-child(1) { left: 10%; animation-delay: 0s; }
+.social-icons-bg i:nth-child(2) { left: 25%; animation-delay: 2s; }
+.social-icons-bg i:nth-child(3) { left: 45%; animation-delay: 4s; }
+.social-icons-bg i:nth-child(4) { left: 65%; animation-delay: 1s; }
+.social-icons-bg i:nth-child(5) { left: 80%; animation-delay: 3s; }
+.social-icons-bg i:nth-child(6) { left: 90%; animation-delay: 5s; }
+
+@keyframes moveUp {
+    from {
+        transform: translateY(0) scale(0.8);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(-120vh) scale(1.1);
+        opacity: 1;
+    }
+}
+
+
+.post-icons {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 0;
+}
+
+.post-icons i {
+    font-size: 40px;
+    color: rgba(0, 0, 0, 0.866);
+}
+
+/* Floating post icons background */
+.social-icons-bg {
+    position: absolute;
+    inset: 0;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 0;
+}
+
+.social-icons-bg i {
+    position: absolute;
+    bottom: -60px;
+    font-size: 48px;
+    color: rgba(0, 0, 0, 0.867);
+    animation: moveUp 5s linear infinite;
+}
+

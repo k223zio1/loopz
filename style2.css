@@ -1,0 +1,43 @@
+body {
+    background: #111;
+    color: #fff;
+    font-family: Poppins, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.settings-box {
+    background: #1e1e1e;
+    padding: 30px;
+    border-radius: 12px;
+    width: 300px;
+}
+
+.delete-btn {
+    margin-top: 25px;
+    width: 100%;
+    padding: 12px;
+    background: #b30000;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.delete-btn:hover {
+    background: #ff1a1a;
+}
+
+
+.help-link {
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+    color: #4caf50;
+    text-decoration: none;
+}
