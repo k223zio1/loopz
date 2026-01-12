@@ -1,0 +1,650 @@
+
+
+
+
+/*//////////////////////////////////////////////////////////////////
+[ FONT ]*/
+
+@font-face {
+  font-family: Ubuntu-Regular;
+  src: url('../fonts/ubuntu/Ubuntu-Regular.ttf'); 
+}
+
+@font-face {
+  font-family: Ubuntu-Bold;
+  src: url('../fonts/ubuntu/Ubuntu-Bold.ttf'); 
+}
+
+
+
+
+/*//////////////////////////////////////////////////////////////////
+[ RESTYLE TAG ]*/
+
+* {
+	margin: 0px; 
+	padding: 0px; 
+	box-sizing: border-box;
+}
+
+body, html {
+	height: 100%;
+	font-family: Ubuntu-Regular, sans-serif;
+}
+
+.bg-video {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    z-index: -1;
+    background: black;
+}
+.site-header {
+	background: linear-gradient(120deg, #88acea, #031779, #c3a3ef);
+	padding: 20px 0;
+	color: #fff;
+	box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  align-items: center ;
+  opacity: 80%;
+}
+
+.header-content {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 15px;
+}
+
+.header-content i {
+	font-size: 42px;
+	opacity: 0.9;
+}
+
+.header-content h1 {
+	margin: 0;
+	font-size: 26px;
+	font-weight: 600;
+}
+
+.header-content p {
+	margin: 2px 0 0;
+	font-size: 14px;
+	opacity: 0.9;
+  color: white;
+  align-items: center;
+  padding-left: 40px;
+}
+.welcome-title {
+    font-size: 32px;
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.logo-text {
+    display: inline-flex;
+    align-items: center;
+}
+
+.inline-logo {
+    height: 36px;      /* match text height */
+    width: auto;
+    margin-right: 2px;
+}
+
+
+
+.site-footer {
+	background: #9c9b9b;
+	color: #000000;
+	text-align: center;
+	padding: 30px 0;
+  position: relative;
+}
+.site-footer p{
+	color: #000000;
+	text-align: center;
+	font-size: 14px;
+}
+
+/*---------------------------------------------*/
+a { 
+	font-family: Ubuntu-Regular;
+	font-size: 14px;
+	line-height: 1.7;
+	color: #000000;
+	margin: 0px;
+	transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+}
+
+a:focus {
+	outline: none !important;
+}
+
+a:hover {
+	text-decoration: none;
+  color: #fff;
+}
+
+/*---------------------------------------------*/
+h1,h2,h3,h4,h5,h6 {
+	margin: 0px;
+}
+
+p {
+	font-family: Ubuntu-Regular;
+	font-size: 14px;
+	line-height: 1.7;
+	color: #666666;
+	margin: 0px;
+}
+
+ul, li {
+	margin: 0px;
+	list-style-type: none;
+}
+
+
+/*---------------------------------------------*/
+input {
+	outline: none;
+	border: none;
+}
+
+textarea {
+  outline: none;
+  border: none;
+}
+
+textarea:focus, input:focus {
+  border-color: transparent !important;
+}
+
+input:focus::-webkit-input-placeholder { color:transparent; }
+input:focus:-moz-placeholder { color:transparent; }
+input:focus::-moz-placeholder { color:transparent; }
+input:focus:-ms-input-placeholder { color:transparent; }
+
+textarea:focus::-webkit-input-placeholder { color:transparent; }
+textarea:focus:-moz-placeholder { color:transparent; }
+textarea:focus::-moz-placeholder { color:transparent; }
+textarea:focus:-ms-input-placeholder { color:transparent; }
+
+input::-webkit-input-placeholder { color: #555555;}
+input:-moz-placeholder { color: #555555;}
+input::-moz-placeholder { color: #555555;}
+input:-ms-input-placeholder { color: #555555;}
+
+textarea::-webkit-input-placeholder { color: #555555;}
+textarea:-moz-placeholder { color: #555555;}
+textarea::-moz-placeholder { color: #555555;}
+textarea:-ms-input-placeholder { color: #555555;}
+
+label {
+  margin: 0;
+  display: block;
+}
+
+/*---------------------------------------------*/
+button {
+	outline: none !important;
+	border: none;
+	background: transparent;
+}
+
+button:hover {
+	cursor: pointer;
+}
+
+iframe {
+	border: none !important;
+}
+
+
+/*//////////////////////////////////////////////////////////////////
+[ Utility ]*/
+.txt1 {
+  font-family: Poppins-Regular;
+  font-size: 13px;
+  color: #e5e5e5;
+  line-height: 1.5;
+}
+.txt2 {
+  font-family:Linearicons-Free;  
+  font-size: 18px;
+  color: #3e36d0;
+  line-height: 1.5;
+}
+.txt2:hover{
+  color: #100101;
+}
+
+
+/*//////////////////////////////////////////////////////////////////
+[ login ]*/
+
+.limiter {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.container-login100 {
+  width: 100%;  
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  z-index: 1;  
+}
+
+.container-login100::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0,0,0,0.65);
+}
+
+.wrap-login100 {
+  width: 390px;
+  border-radius: 10px;
+  overflow: hidden;
+
+  background: transparent;
+}
+
+
+
+
+/*------------------------------------------------------------------
+[ Form ]*/
+
+.login100-form {
+  width: 100%;
+  border-radius: 10px;
+  background-color: #fff;
+}
+
+.login100-form-logo {
+  font-size: 60px; 
+  color: #333333;
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color: #fff;
+  margin: 0 auto;
+}
+
+.login100-form-title {
+  font-family: Ubuntu-Bold;
+  font-size: 28px;
+  color: #fff;
+  line-height: 0.3;
+  text-align: center;
+  text-transform: uppercase;
+  display: block;
+}
+
+.g-recaptcha{
+  margin: 15px;
+  padding-left: 30px;
+}
+
+
+/*------------------------------------------------------------------
+[ Input ]*/
+
+.wrap-input100 {
+  width: 100%;
+  position: relative;
+  border-bottom: 1px solid #e6e6e6;
+  padding: 29px 0;
+}
+
+.input100 {
+  font-family: Ubuntu-Regular;
+  font-size: 20px;
+  color: #555555;
+  line-height: 1.2;
+
+  display: block;
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  padding: 0 10px 0 80px;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+/*---------------------------------------------*/ 
+.focus-input100 {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.focus-input100::before {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 0;
+  height: 1px;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+
+  background: -webkit-linear-gradient(left, #88acea, #2f48c8, #c3a3ef);
+  background: -o-linear-gradient(left, #0848c8, #b8aeee, #90efe7);
+  background: -moz-linear-gradient(left, #a445b2, #d41872, #fa4299);
+  background: linear-gradient(left, #9fd1e8, #6753fc, #42c6fa);
+}
+
+.focus-input100::after {
+  font-family: Linearicons-Free;
+  font-size: 18px;
+  color: #999999;
+
+  content: attr(data-placeholder);
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 40px;
+  left: 35px;
+ 
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.input100:focus {
+  padding-left: 60px;
+}
+
+.input100:focus + .focus-input100::after {
+  left: 23px;
+  color: #d41872;
+}
+
+.input100:focus + .focus-input100::before {
+  width: 100%;
+}
+
+.has-val.input100 + .focus-input100::after {
+  left: 23px;
+  color: #d41872;
+}
+
+.has-val.input100 + .focus-input100::before {
+  width: 100%;
+}
+
+.has-val.input100 {
+  padding-left: 60px;
+}
+
+
+/*------------------------------------------------------------------
+[ Button ]*/
+.container-login100-form-btn {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.login100-form-btn {
+  font-family: Ubuntu-Bold;
+  font-size: 18px;
+  color: #fff;
+  line-height: 1.2;
+  text-transform: uppercase;
+
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  min-width: 160px;
+  height: 42px;
+  border-radius: 21px;
+
+  background: #d41872;
+  background: -webkit-linear-gradient(left, #4581b2, #1d0874, #addffb);
+  background: -o-linear-gradient(left, #a445b2, #d41872, #fa4299);
+  background: -moz-linear-gradient(left, #a445b2, #d41872, #fa4299);
+  background: linear-gradient(left, #a445b2, #d41872, #fa4299);
+  position: relative;
+  z-index: 1;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.login100-form-btn::before {
+  content: "";
+  display: block;
+  position: absolute;
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+  border-radius: 21px;
+  background-color: #2bdb34;
+  top: 0;
+  left: 0;
+  opacity: 0;
+
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.login100-form-btn:hover {
+  background-color:#2bdb34
+}
+
+.login100-form-btn:hover:before {
+  opacity: 1;
+}
+
+.register-btn {
+	width: 40%;
+	height: 50px;
+	border-radius: 25px;
+	background: transparent;
+	border: 2px solid #2575fc;
+	color: #2575fc;
+	font-size: 15px;
+	font-weight: 600;
+	cursor: pointer;
+  font-family: Ubuntu-Bold;
+  text-transform: uppercase;
+	transition: all 0.3s ease;
+}
+
+.register-btn:hover {
+	background: #2575fc;
+	color: #fff;
+}
+
+
+
+
+/*------------------------------------------------------------------
+[ Alert validate ]*/
+
+.validate-input {
+  position: relative;
+}
+
+.alert-validate::before {
+  content: attr(data-validate);
+  position: absolute;
+  max-width: 70%;
+  background-color: #fff;
+  border: 1px solid #c80000;
+  border-radius: 2px;
+  padding: 4px 25px 4px 10px;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 10px;
+  pointer-events: none;
+
+  font-family: Ubuntu-Bold;
+  color: #c80000;
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: left;
+
+  visibility: hidden;
+  opacity: 0;
+
+  -webkit-transition: opacity 0.4s;
+  -o-transition: opacity 0.4s;
+  -moz-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+}
+
+.alert-validate::after {
+  content: "\f12a";
+  font-family: FontAwesome;
+  font-size: 16px;
+  color: #c80000;
+
+  display: block;
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  right: 15px;
+}
+
+.alert-validate:hover:before {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media (max-width: 992px) {
+  .alert-validate::before {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+.container-login100.social-bg {
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #141e30, #243b55);
+}
+
+/* Icon layer */
+.social-icons-bg {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Icons */
+.social-icons-bg i {
+    position: absolute;
+    bottom: -100px;
+    font-size: 64px;
+    color: rgba(255, 255, 255, 0.15);
+    animation: moveUp 5s linear infinite;
+}
+
+/* Horizontal positions + delays */
+.social-icons-bg i:nth-child(1) { left: 10%; animation-delay: 0; }
+.social-icons-bg i:nth-child(2) { left: 25%; animation-delay: 1s; }
+.social-icons-bg i:nth-child(3) { left: 45%; animation-delay: 2s; }
+.social-icons-bg i:nth-child(4) { left: 65%; animation-delay: 3s; }
+.social-icons-bg i:nth-child(5) { left: 80%; animation-delay: 1s; }
+.social-icons-bg i:nth-child(6) { left: 90%; animation-delay: 1s; }
+.social-icons-bg i:nth-child(7) { left: 15%; animation-delay: 2s; }
+.social-icons-bg i:nth-child(8) { left: 35%; animation-delay: 5s; }
+.social-icons-bg i:nth-child(9) { left: 55%; animation-delay: 8s; }
+.social-icons-bg i:nth-child(10){ left: 75%; animation-delay: 11s; }
+.social-icons-bg i:nth-child(11) { left: 85%; animation-delay: 3; }
+.social-icons-bg i:nth-child(12) { left: 90%; animation-delay: 6s; }
+.social-icons-bg i:nth-child(13) { left: 95%; animation-delay: 4s; }
+
+
+@keyframes moveUp {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(-120vh);
+    }
+}
+
+/* Login box always on top */
+.wrap-login100 {
+    position: relative;
+    z-index: 5;
+}
+
+
